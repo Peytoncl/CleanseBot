@@ -18,7 +18,16 @@ client.on('message', msg=>{
 
 client.on('message', msg=>{
 	if(msg.content.toLowerCase() == ';help'){
-	msg.channel.send('";donate", ";discord", ";twitch", "demon dog"')
+	const moneyEmbed = new Discord.MessageEmbed();
+	moneyEmbed.setAuthor(msg.author.username)
+	moneyEmbed.setColor("#425f8f")
+	moneyEmbed.addField(`;donate`)
+	moneyEmbed.addField(`;twitch`)
+	moneyEmbed.addField(`;discord`)
+	moneyEmbed.addField(`demon dog`)
+	moneyEmbed.addField(`;help`)
+
+	msg.channel.send(moneyEmbed);   
 	msg.delete();
 	}
 })
