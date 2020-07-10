@@ -1,0 +1,15 @@
+{
+  "name": "magic-8-ball",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wubzy",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "profanities": "^2.13.0"
+  }
+}
