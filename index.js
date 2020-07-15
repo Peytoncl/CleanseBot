@@ -12,7 +12,6 @@ client.on('ready', () =>{
 client.on('message', msg=>{
 	if(msg.content.toLowerCase() == ';donate'){
 	msg.channel.send('https://streamlabs.com/botcleanse/tip')
-	msg.delete();
 	}
 })
 
@@ -48,16 +47,23 @@ client.on('message', msg=>{
 })
 
 client.on('message', msg=>{
-	if(msg.content.toLowerCase() == ';discord'){
+	if(msg.content.toLowerCase() == ';discord' && msg.member.hasPermission("ADMINISTRATOR")){
+	msg.channel.send('https://tenor.com/view/explosion-nuke-boom-nuclear-gif-5791468')
+	msg.channel.send('https://tenor.com/view/explosion-nuke-boom-nuclear-gif-5791468')
+	msg.channel.send('https://tenor.com/view/explosion-nuke-boom-nuclear-gif-5791468')
+	msg.channel.send('https://tenor.com/view/explosion-nuke-boom-nuclear-gif-5791468')
+	}
+})
+
+client.on('message', msg=>{
+	if(msg.content.toLowerCase() == ';nuke'){
 	msg.channel.send('https://discord.gg/TPxAKF')
-	msg.delete();
 	}
 })
 
 client.on('message', msg=>{
 	if(msg.content.toLowerCase() == ';twitch'){
 	msg.channel.send('https://www.twitch.tv/botcleanse')
-	msg.delete();
 	}
 })
 
@@ -250,32 +256,32 @@ client.on('message', msg=>{
 		let number = Math.random();
 		if (number > .8 && number < .9) {
 			msg.channel.send('https://imgur.com/XExZxy7') 
-			msg.delete();
+
 			return;
 		}
 		else if (number > .9 && number < 1) {
 			msg.channel.send('https://imgur.com/ZLm4EQ1') 
-			msg.delete();
+
 			return;
 		}	
 		else if (number > .7 && number < .8) {
 			msg.channel.send('https://imgur.com/NmnZKmD') 
-			msg.delete();
+		
 			return;
 		}
 		else if (number > .6 && number < .7) {
 			msg.channel.send('https://imgur.com/iPIh9eu') 
-			msg.delete();
+			
 			return;
 		}
 		else if (number > .5 && number < .6) {
 			msg.channel.send('https://imgur.com/NmnZKmD') 
-			msg.delete();
+		
 			return;
 		}		
 		else {
 			msg.channel.send('https://imgur.com/ddg5Lws')
-			msg.delete();
+	
 		}	
 	}
 })
