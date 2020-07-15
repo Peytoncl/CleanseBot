@@ -47,7 +47,7 @@ client.on('message', msg=>{
 })
 
 client.on('message', msg=>{
-	if(msg.content.toLowerCase() == ';discord' && msg.member.hasPermission("ADMINISTRATOR")){
+	if(msg.content.toLowerCase() == ';nuke' && msg.member.hasPermission("ADMINISTRATOR")){
 	msg.channel.send('https://tenor.com/view/explosion-nuke-boom-nuclear-gif-5791468')
 	msg.channel.send('https://tenor.com/view/explosion-nuke-boom-nuclear-gif-5791468')
 	msg.channel.send('https://tenor.com/view/explosion-nuke-boom-nuclear-gif-5791468')
@@ -56,8 +56,8 @@ client.on('message', msg=>{
 })
 
 client.on('message', msg=>{
-	if(msg.content.toLowerCase() == ';nuke'){
-	msg.channel.send('https://discord.gg/TPxAKF')
+	if(msg.content.toLowerCase() == ';discord'){
+	msg.channel.send('https://discord.gg/RV5vAtR')
 	}
 })
 
