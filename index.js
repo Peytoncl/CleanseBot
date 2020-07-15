@@ -34,12 +34,12 @@ client.on('message', msg=>{
 
 client.on('message', msg=>{
 	if(msg.content.toLowerCase() == ';help admin' && msg.member.hasPermission("ADMINISTRATOR")) {
-	const moneyEmbed = new Discord.MessageEmbed();
-	moneyEmbed.setAuthor(msg.author.username)
-	moneyEmbed.setColor("#FF0000")
-	moneyEmbed.addField(`;nuke`)
+	const Embed = new Discord.MessageEmbed();
+	Embed.setAuthor(msg.author.username)
+	Embed.setColor("#FF0000")
+	Embed.addField(`;nuke`)
 
-	msg.channel.send(moneyEmbed);   
+	msg.channel.send(Embed);   
 	}
 	else if(msg.content.toLowerCase() == ';help admin' && !msg.member.hasPermission("ADMINISTRATOR")) {
 		msg.reply('You don`t have premissions to do this.') 
@@ -280,4 +280,4 @@ client.on('message', msg=>{
 	}
 })
 
-client.login(process.env.token);
+client.login(token);
