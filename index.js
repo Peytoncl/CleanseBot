@@ -16,6 +16,36 @@ client.on('message', msg=>{
 })
 
 client.on('message', msg=>{
+	if(msg.content.toLowerCase() == ';twitter'){
+	msg.channel.send('https://twitter.com/botCleanse')
+	}
+})
+
+client.on("message", msg => {
+    if (msg.content.toLowerCase() == ";clear" && msg.member.hasPermission("ADMINISTRATOR")) {
+        async function clear() {
+            msg.delete();
+            const fetched = await msg.channel.fetchMessages({limit: 90});
+			msg.channel.bulkDelete(fetched);
+        }
+        clear();
+	}
+	else if(msg.content.toLowerCase() == ';help admin' && !msg.member.hasPermission("ADMINISTRATOR")) {
+		let number = Math.random();
+		if (number > 0 && number < .5) {
+			msg.reply('No')
+
+			return;
+		}
+		else if (number > .5 && number < 1) {
+			msg.reply('You lack intelligence to run that command')
+
+			return;
+		}
+		}	
+});
+
+client.on('message', msg=>{
 	if(msg.content.toLowerCase() == ';help'){
 	const moneyEmbed = new Discord.MessageEmbed();
 	moneyEmbed.setAuthor(msg.author.username)
@@ -41,8 +71,17 @@ client.on('message', msg=>{
 	msg.channel.send(Embed);   
 	}
 	else if(msg.content.toLowerCase() == ';help admin' && !msg.member.hasPermission("ADMINISTRATOR")) {
-		msg.reply('You don`t have premissions to do this.') 
+		let number = Math.random();
+		if (number > 0 && number < .5) {
+			msg.reply('No')
 
+			return;
+		}
+		else if (number > .5 && number < 1) {
+			msg.reply('You lack intelligence to run that command')
+
+			return;
+		}
 		}
 })
 
@@ -54,7 +93,17 @@ client.on('message', msg=>{
 	msg.channel.send('https://tenor.com/view/explosion-nuke-boom-nuclear-gif-5791468')
 	}
 	else if(msg.content.toLowerCase() == ';nuke' && !msg.member.hasPermission("ADMINISTRATOR")){
-		msg.reply('You need admin to do this.')
+		let number = Math.random();
+		if (number > 0 && number < .5) {
+			msg.reply('No')
+
+			return;
+		}
+		else if (number > .5 && number < 1) {
+			msg.reply('You lack intelligence to run that command')
+
+			return;
+		}
 		}
 })
 
