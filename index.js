@@ -43,6 +43,7 @@ client.on('message', msg=>{
 	}
 	else if(msg.content.toLowerCase() == ';help admin' && !msg.member.hasPermission("ADMINISTRATOR")) {
 		msg.reply('You don`t have premissions to do this.') 
+		
 		}
 })
 
