@@ -53,6 +53,9 @@ client.on('message', msg=>{
 	msg.channel.send('https://tenor.com/view/explosion-nuke-boom-nuclear-gif-5791468')
 	msg.channel.send('https://tenor.com/view/explosion-nuke-boom-nuclear-gif-5791468')
 	}
+	else if(msg.content.toLowerCase() == ';nuke' && !msg.member.hasPermission("ADMINISTRATOR")){
+		msg.reply('You need admin to do this.')
+		}
 })
 
 client.on('message', msg=>{
