@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = 'NzI3NzMxNjQ0NzQ4MDA1NDA2.Xv2qHQ.iCUBaNkVGqM_5z_6qSKvP38EeyY';
 var profanities = require('profanities')
+const db = require('quick.db');
 
 client.on('ready', () =>{
 	console.log('This bot is online!')
@@ -20,30 +21,6 @@ client.on('message', msg=>{
 	msg.channel.send('https://twitter.com/botCleanse')
 	}
 })
-
-client.on("message", msg => {
-    if (msg.content.toLowerCase() == ";clear" && msg.member.hasPermission("ADMINISTRATOR")) {
-        async function clear() {
-            msg.delete();
-            const fetched = await msg.channel.fetchMessages({limit: 90});
-			msg.channel.bulkDelete(fetched);
-        }
-        clear();
-	}
-	else if(msg.content.toLowerCase() == ';help admin' && !msg.member.hasPermission("ADMINISTRATOR")) {
-		let number = Math.random();
-		if (number > 0 && number < .5) {
-			msg.reply('No')
-
-			return;
-		}
-		else if (number > .5 && number < 1) {
-			msg.reply('You lack intelligence to run that command')
-
-			return;
-		}
-		}	
-});
 
 client.on('message', msg=>{
 	if(msg.content.toLowerCase() == ';help'){
