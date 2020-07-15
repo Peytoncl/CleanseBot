@@ -26,10 +26,24 @@ client.on('message', msg=>{
 	moneyEmbed.addField(`;discord`)
 	moneyEmbed.addField(`demon dog`)
 	moneyEmbed.addField(`;help`)
+	moneyEmbed.addField(`;help admin`)
 
 	msg.channel.send(moneyEmbed);   
-	msg.delete();
 	}
+})
+
+client.on('message', msg=>{
+	if(msg.content.toLowerCase() == ';help admin' && msg.member.hasPermission("ADMINISTRATOR")) {
+	const moneyEmbed = new Discord.MessageEmbed();
+	moneyEmbed.setAuthor(msg.author.username)
+	moneyEmbed.setColor("#FF0000")
+	moneyEmbed.addField(`;nuke`)
+
+	msg.channel.send(moneyEmbed);   
+	}
+	else if(msg.content.toLowerCase() == ';help admin' && !msg.member.hasPermission("ADMINISTRATOR")) {
+		msg.reply('You don`t have premissions to do this.') 
+		}
 })
 
 client.on('message', msg=>{
