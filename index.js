@@ -26,7 +26,7 @@ client.on('message', msg=>{
 	moneyEmbed.addField(`;discord`)
 	moneyEmbed.addField(`demon dog`)
 	moneyEmbed.addField(`;help`)
-	moneyEmbed.addField(`;help admin`)
+	moneyEmbed.addField(`;help admin (Only for admins)`)
 
 	msg.channel.send(moneyEmbed);   
 	}
@@ -43,7 +43,7 @@ client.on('message', msg=>{
 	}
 	else if(msg.content.toLowerCase() == ';help admin' && !msg.member.hasPermission("ADMINISTRATOR")) {
 		msg.reply('You don`t have premissions to do this.') 
-		
+
 		}
 })
 
