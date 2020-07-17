@@ -17,11 +17,96 @@ client.on('message', msg=>{
 })
 
 client.on('message', msg=>{
+	if(msg.content.toLowerCase() == ';nike'){
+	msg.channel.send('https://imgur.com/LiXoF5n')
+	}
+})
+
+client.on('message', msg=>{
+	if(msg.content.toLowerCase() == ';starbucks'){
+	msg.channel.send('https://imgur.com/ByZHXxV')
+	}
+})
+
+client.on('message', msg=>{
+	if(msg.content.toLowerCase() == ';whoscool'){
+	msg.channel.send(':sunglasses:Cleanse is cool:sunglasses:')
+	msg.channel.send(':sunglasses:Cleanse is cool:sunglasses:')
+	msg.channel.send(':sunglasses:Cleanse is cool:sunglasses:')
+	msg.channel.send(':sunglasses:Cleanse is cool:sunglasses:')
+	msg.channel.send(':sunglasses:Cleanse is cool:sunglasses:')
+	}
+})
+
+client.on('message', msg=>{
+	if(msg.content.toLowerCase() == ';joe'){
+	msg.channel.send('mama')
+	}
+})
+
+client.on('message', msg=>{
 	if(msg.content.toLowerCase() == ';twitter'){
 	msg.channel.send('https://twitter.com/botCleanse')
 	}
 })
 
+client.on('message', message => {
+	if(message.content.startsWith(';kick')) {
+		if(!message.member.hasPermission('KICK_MEMBERS')) {
+			message.channel.send('You do not have high enough roles to do that.');
+			return;
+		};
+  
+		let mentionMember = message.mentions.members.first();
+		if(!mentionMember) {
+			message.channel.send('Please mention someone');
+			return;
+		}
+  
+		let authorHighestRole = message.author.highestRole;
+		let mentionHighestRole = mentionMember.highestRole;
+  
+		if(mentionHighestRole >= authorHighestRole) {
+			message.channel.send('You must mention someone with a lower rank than you.');
+			return;
+		};
+
+		mentionMember.kickable = true; 
+		mentionMember.kick()
+			.then(() => message.channel.send('Kicked!'))
+			.catch(console.error);
+	};
+  })
+
+  client.on('message', message => {
+	if(message.content.startsWith(';ban')) {
+		if(!message.member.hasPermission('BAN_MEMBERS')) {
+			message.channel.send('You do not have high enough roles to do that.');
+			return;
+		};
+  
+		let mentionMember = message.mentions.members.first();
+		if(!mentionMember) {
+			message.channel.send('Please mention someone');
+			return;
+		}
+  
+		let authorHighestRole = message.author.highestRole;
+		let mentionHighestRole = mentionMember.highestRole;
+  
+		if(mentionHighestRole >= authorHighestRole) {
+			message.channel.send('You must mention someone with a lower rank than you.');
+			return;
+		};
+  
+		mentionMember.bannable = true;
+		mentionMember.ban()
+			.then(() => message.channel.send('Banned!'))
+			.catch(console.error);
+	};
+  })
+
+//help
 client.on('message', msg=>{
 	if(msg.content.toLowerCase() == ';help'){
 	const moneyEmbed = new Discord.MessageEmbed();
@@ -32,6 +117,9 @@ client.on('message', msg=>{
 	moneyEmbed.addField(`;discord`)
 	moneyEmbed.addField(`demon dog`)
 	moneyEmbed.addField(`;help`)
+	moneyEmbed.addField(`;nike`)
+	moneyEmbed.addField(`;starbucks`)
+	moneyEmbed.addField(`;whoscool`)
 	moneyEmbed.addField(`;help admin (Only for admins)`)
 
 	msg.channel.send(moneyEmbed);   
@@ -44,6 +132,8 @@ client.on('message', msg=>{
 	Embed.setAuthor(msg.author.username)
 	Embed.setColor("#FF0000")
 	Embed.addField(`;nuke`)
+	Embed.addField(`;kick`)
+	Embed.addField(`;ban`)
 
 	msg.channel.send(Embed);   
 	}
