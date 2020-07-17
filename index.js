@@ -5,7 +5,7 @@ var profanities = require('profanities')
 const db = require('quick.db');
 
 client.on('ready', () =>{
-	console.log('This bot is online!')
+	console.log('CLEANSE BOT ACTIVATED')
 	client.user.setStatus('online')
 	client.user.setActivity(';help', { type: 'LISTENING'})
 })
@@ -47,6 +47,12 @@ client.on('message', msg=>{
 client.on('message', msg=>{
 	if(msg.content.toLowerCase() == ';twitter'){
 	msg.channel.send('https://twitter.com/botCleanse')
+	}
+})
+
+client.on('message', msg=>{
+	if(msg.content.toLowerCase() == ';no'){
+	msg.reply('you')
 	}
 })
 
