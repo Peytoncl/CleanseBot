@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = 'NzI3NzMxNjQ0NzQ4MDA1NDA2.XxKarA.bozF1rJ6BwNTWQT66HflZHE38-Q';
-var profanities = require('profanities')
+const config = require('./config.json');
+var profanities = require('profanities');
 const db = require('quick.db');
 
 client.on('ready', () =>{
@@ -411,4 +411,4 @@ client.on('message', msg=>{
 	}
 })
 
-client.login(token);
+client.login(config.token);
